@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Software Factory - AI-Powered Development">
+  <main class="min-h-screen bg-dark-bg text-white">
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-20 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6">
+        <span class="text-neon-cyan">Software</span>
+        <span class="text-neon-magenta">Factory</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto">
+        Transform your GitHub repos into autonomous AI-powered factories.
+        Let AI agents handle the grunt work while you focus on what matters.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#pricing" class="px-8 py-4 bg-neon-cyan text-dark-bg font-bold rounded-lg hover:bg-neon-cyan/80 transition">
+          Get Started Free
+        </a>
+        <a href="/software-factory-site/docs" class="px-8 py-4 border border-neon-magenta text-neon-magenta font-bold rounded-lg hover:bg-neon-magenta/10 transition">
+          Documentation
+        </a>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="container mx-auto px-4 py-16">
+      <h2 class="text-3xl font-bold text-center mb-12 text-neon-yellow">Features</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 bg-dark-surface rounded-lg border border-gray-800">
+          <div class="text-4xl mb-4">🤖</div>
+          <h3 class="text-xl font-bold mb-2 text-neon-cyan">AI Agents</h3>
+          <p class="text-gray-400">GitHub Copilot & Jules integration. Automated code reviews, issue triage, and PR management.</p>
+        </div>
+        <div class="p-6 bg-dark-surface rounded-lg border border-gray-800">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-xl font-bold mb-2 text-neon-magenta">Rust Core</h3>
+          <p class="text-gray-400">Blazingly fast agent execution in GitHub Actions. Minimal resource usage, maximum efficiency.</p>
+        </div>
+        <div class="p-6 bg-dark-surface rounded-lg border border-gray-800">
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="text-xl font-bold mb-2 text-neon-yellow">Real-time Dashboard</h3>
+          <p class="text-gray-400">Monitor agent activity, track metrics, and visualize your factory's productivity in real-time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="container mx-auto px-4 py-16">
+      <h2 class="text-3xl font-bold text-center mb-12 text-neon-yellow">Pricing</h2>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Free Tier -->
+        <div class="p-6 bg-dark-surface rounded-lg border border-gray-800">
+          <h3 class="text-2xl font-bold mb-2">Free</h3>
+          <p class="text-4xl font-bold mb-4">$0<span class="text-lg text-gray-500">/mo</span></p>
+          <p class="text-gray-500 text-sm mb-4">Ad-supported</p>
+          <ul class="space-y-2 mb-6 text-gray-400">
+            <li>✅ 1 repository</li>
+            <li>✅ Basic AI agents</li>
+            <li>✅ Community support</li>
+            <li>⚠️ Contains ads</li>
+          </ul>
+          <a href="#" class="block w-full py-3 text-center border border-gray-600 rounded-lg hover:bg-gray-800 transition">
+            Start Free
+          </a>
+        </div>
+        <!-- Starter -->
+        <div class="p-6 bg-dark-surface rounded-lg border-2 border-neon-cyan relative">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-neon-cyan text-dark-bg text-sm font-bold rounded">Popular</span>
+          <h3 class="text-2xl font-bold mb-2">Starter</h3>
+          <p class="text-4xl font-bold mb-4">$5<span class="text-lg text-gray-500">/mo</span></p>
+          <p class="text-gray-500 text-sm mb-4">No ads</p>
+          <ul class="space-y-2 mb-6 text-gray-400">
+            <li>✅ 5 repositories</li>
+            <li>✅ All AI agents</li>
+            <li>✅ Priority support</li>
+            <li>✅ No ads</li>
+          </ul>
+          <a href="#" class="block w-full py-3 text-center bg-neon-cyan text-dark-bg font-bold rounded-lg hover:bg-neon-cyan/80 transition">
+            Subscribe
+          </a>
+        </div>
+        <!-- Pro -->
+        <div class="p-6 bg-dark-surface rounded-lg border border-gray-800">
+          <h3 class="text-2xl font-bold mb-2">Pro</h3>
+          <p class="text-4xl font-bold mb-4">$15<span class="text-lg text-gray-500">/mo</span></p>
+          <p class="text-gray-500 text-sm mb-4">For power users</p>
+          <ul class="space-y-2 mb-6 text-gray-400">
+            <li>✅ Unlimited repos</li>
+            <li>✅ Custom agents</li>
+            <li>✅ API access</li>
+            <li>✅ Dedicated support</li>
+          </ul>
+          <a href="#" class="block w-full py-3 text-center border border-neon-magenta text-neon-magenta rounded-lg hover:bg-neon-magenta/10 transition">
+            Subscribe
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Requires Git-Core Protocol -->
+    <section class="container mx-auto px-4 py-16 text-center">
+      <div class="p-8 bg-dark-surface rounded-lg border border-neon-yellow max-w-3xl mx-auto">
+        <h3 class="text-2xl font-bold mb-4 text-neon-yellow">⚠️ Requires Git-Core Protocol</h3>
+        <p class="text-gray-400 mb-4">
+          Software Factory follows the Git-Core Protocol methodology. Your repository must include the required configuration.
+        </p>
+        <a href="https://github.com/git-core-protocol/specification" class="text-neon-cyan hover:underline" target="_blank">
+          Learn more about Git-Core Protocol →
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-8">
+      <div class="container mx-auto px-4 text-center text-gray-500">
+        <p>© 2025 Software Factory. Built with ❤️ and AI.</p>
+        <div class="flex justify-center gap-6 mt-4">
+          <a href="https://github.com/iberi22/software-factory-site" class="hover:text-neon-cyan">GitHub</a>
+          <a href="/software-factory-site/docs" class="hover:text-neon-cyan">Docs</a>
+          <a href="#" class="hover:text-neon-cyan">Privacy</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+</Layout>

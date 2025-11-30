@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Documentation - Software Factory">
+  <main class="min-h-screen bg-dark-bg text-white">
+    <div class="container mx-auto px-4 py-12">
+      <h1 class="text-4xl font-bold mb-8">
+        <span class="text-neon-cyan">📚</span> Documentation
+      </h1>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <a href="/software-factory-site/docs/getting-started" class="p-6 bg-dark-surface rounded-lg border border-gray-800 hover:border-neon-cyan transition">
+          <h2 class="text-xl font-bold mb-2 text-neon-cyan">🚀 Getting Started</h2>
+          <p class="text-gray-400">Quick start guide to set up Software Factory in your repository.</p>
+        </a>
+        
+        <a href="/software-factory-site/docs/agents" class="p-6 bg-dark-surface rounded-lg border border-gray-800 hover:border-neon-magenta transition">
+          <h2 class="text-xl font-bold mb-2 text-neon-magenta">🤖 AI Agents</h2>
+          <p class="text-gray-400">Learn about available agents and how to configure them.</p>
+        </a>
+        
+        <a href="/software-factory-site/docs/git-core-protocol" class="p-6 bg-dark-surface rounded-lg border border-gray-800 hover:border-neon-yellow transition">
+          <h2 class="text-xl font-bold mb-2 text-neon-yellow">📋 Git-Core Protocol</h2>
+          <p class="text-gray-400">Understand the Git-Core Protocol methodology and requirements.</p>
+        </a>
+        
+        <a href="/software-factory-site/docs/api" class="p-6 bg-dark-surface rounded-lg border border-gray-800 hover:border-white transition">
+          <h2 class="text-xl font-bold mb-2">⚡ API Reference</h2>
+          <p class="text-gray-400">Complete API documentation for advanced integrations.</p>
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>
