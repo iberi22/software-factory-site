@@ -1,0 +1,210 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Pricing - Software Factory">
+  <main class="min-h-screen bg-dark-bg text-white">
+    <div class="container mx-auto px-4 py-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">
+        <span class="text-neon-yellow">💳</span> Simple Pricing
+      </h1>
+      <p class="text-xl text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+        Choose the plan that fits your needs. Start free, upgrade anytime.
+      </p>
+      
+      <!-- Pricing Grid -->
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Free Tier -->
+        <div class="p-6 bg-dark-surface rounded-lg border border-gray-800 flex flex-col">
+          <h3 class="text-2xl font-bold mb-2">Free</h3>
+          <p class="text-4xl font-bold mb-2">$0<span class="text-lg text-gray-500">/mo</span></p>
+          <p class="text-gray-500 text-sm mb-6">Ad-supported</p>
+          <ul class="space-y-3 mb-8 flex-grow text-gray-400">
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> 1 repository
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> Basic AI agents
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> Community support
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> GitHub Issues as state
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-yellow-400">⚠</span> Contains ads
+            </li>
+          </ul>
+          <button 
+            class="w-full py-3 text-center border border-gray-600 rounded-lg hover:bg-gray-800 transition"
+            onclick="window.location.href='/software-factory-site/auth/signup?plan=free'"
+          >
+            Start Free
+          </button>
+        </div>
+        
+        <!-- Starter (Popular) -->
+        <div class="p-6 bg-dark-surface rounded-lg border-2 border-neon-cyan relative flex flex-col">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-neon-cyan text-dark-bg text-sm font-bold rounded">
+            Most Popular
+          </span>
+          <h3 class="text-2xl font-bold mb-2">Starter</h3>
+          <p class="text-4xl font-bold mb-2">$5<span class="text-lg text-gray-500">/mo</span></p>
+          <p class="text-gray-500 text-sm mb-6">No ads, more power</p>
+          <ul class="space-y-3 mb-8 flex-grow text-gray-400">
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> 5 repositories
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> All AI agents (Copilot + Jules)
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> Priority support
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> Real-time dashboard
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> No ads
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> Email notifications
+            </li>
+          </ul>
+          <button 
+            id="checkout-starter"
+            class="w-full py-3 text-center bg-neon-cyan text-dark-bg font-bold rounded-lg hover:bg-neon-cyan/80 transition"
+          >
+            Subscribe - $5/mo
+          </button>
+        </div>
+        
+        <!-- Pro -->
+        <div class="p-6 bg-dark-surface rounded-lg border border-gray-800 flex flex-col">
+          <h3 class="text-2xl font-bold mb-2">Pro</h3>
+          <p class="text-4xl font-bold mb-2">$15<span class="text-lg text-gray-500">/mo</span></p>
+          <p class="text-gray-500 text-sm mb-6">For power users</p>
+          <ul class="space-y-3 mb-8 flex-grow text-gray-400">
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> Unlimited repositories
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> Custom AI agents
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> API access
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> Dedicated support
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> Advanced analytics
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> Telegram bot integration
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-400">✓</span> VS Code extension
+            </li>
+          </ul>
+          <button 
+            id="checkout-pro"
+            class="w-full py-3 text-center border border-neon-magenta text-neon-magenta rounded-lg hover:bg-neon-magenta/10 transition"
+          >
+            Subscribe - $15/mo
+          </button>
+        </div>
+      </div>
+      
+      <!-- Team Tier -->
+      <div class="max-w-5xl mx-auto mt-8">
+        <div class="p-8 bg-dark-surface rounded-lg border border-neon-yellow">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 class="text-2xl font-bold mb-2 text-neon-yellow">🏢 Team</h3>
+              <p class="text-gray-400">For organizations with multiple developers</p>
+            </div>
+            <div class="text-center">
+              <p class="text-4xl font-bold">$49<span class="text-lg text-gray-500">/mo</span></p>
+              <p class="text-gray-500 text-sm">Up to 10 users</p>
+            </div>
+            <button 
+              id="checkout-team"
+              class="px-8 py-3 border border-neon-yellow text-neon-yellow font-bold rounded-lg hover:bg-neon-yellow/10 transition"
+            >
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- FAQ -->
+      <div class="max-w-3xl mx-auto mt-16">
+        <h2 class="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <details class="p-4 bg-dark-surface rounded-lg border border-gray-800">
+            <summary class="font-bold cursor-pointer">What payment methods do you accept?</summary>
+            <p class="mt-3 text-gray-400">We accept all major credit cards (Visa, Mastercard, Amex) via Stripe. For Colombia, we also support PSE and local payment methods via Wompi.</p>
+          </details>
+          <details class="p-4 bg-dark-surface rounded-lg border border-gray-800">
+            <summary class="font-bold cursor-pointer">Can I cancel anytime?</summary>
+            <p class="mt-3 text-gray-400">Yes! You can cancel your subscription at any time. Your access continues until the end of your billing period.</p>
+          </details>
+          <details class="p-4 bg-dark-surface rounded-lg border border-gray-800">
+            <summary class="font-bold cursor-pointer">What is Git-Core Protocol?</summary>
+            <p class="mt-3 text-gray-400">Git-Core Protocol is a methodology for AI-assisted development where GitHub Issues are the source of truth. All Software Factory users must follow this protocol.</p>
+          </details>
+          <details class="p-4 bg-dark-surface rounded-lg border border-gray-800">
+            <summary class="font-bold cursor-pointer">Do you offer refunds?</summary>
+            <p class="mt-3 text-gray-400">We offer a 7-day money-back guarantee. If you're not satisfied, contact us within 7 days of your first payment.</p>
+          </details>
+        </div>
+      </div>
+      
+      <!-- Stripe Badge -->
+      <div class="text-center mt-12 text-gray-500 text-sm">
+        <p>Secure payments powered by</p>
+        <img src="https://stripe.com/img/v3/home/twitter.png" alt="Stripe" class="h-8 mx-auto mt-2 opacity-50">
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  // Stripe Checkout Integration
+  const STRIPE_PRICES = {
+    starter: 'price_starter_monthly', // Replace with actual Stripe Price ID
+    pro: 'price_pro_monthly',         // Replace with actual Stripe Price ID
+    team: 'price_team_monthly',       // Replace with actual Stripe Price ID
+  };
+  
+  async function redirectToCheckout(priceId: string) {
+    try {
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId }),
+      });
+      
+      const { url } = await response.json();
+      window.location.href = url;
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('Unable to start checkout. Please try again.');
+    }
+  }
+  
+  document.getElementById('checkout-starter')?.addEventListener('click', () => {
+    redirectToCheckout(STRIPE_PRICES.starter);
+  });
+  
+  document.getElementById('checkout-pro')?.addEventListener('click', () => {
+    redirectToCheckout(STRIPE_PRICES.pro);
+  });
+  
+  document.getElementById('checkout-team')?.addEventListener('click', () => {
+    // For team plan, redirect to contact form
+    window.location.href = '/software-factory-site/contact?plan=team';
+  });
+</script>
