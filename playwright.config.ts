@@ -33,7 +33,9 @@ export default defineConfig({
   // Shared settings for all the projects below
   use: {
     // Base URL to use in actions like `await page.goto('/')`
-    baseURL: 'http://localhost:4321/software-factory',
+    baseURL: process.env.CI 
+      ? 'https://iberi22.github.io/software-factory-site'
+      : 'http://localhost:4321',
 
     // Collect trace when retrying the failed test
     trace: 'on-first-retry',
@@ -66,12 +68,12 @@ export default defineConfig({
     },
   ],
 
-  // Run your local dev server before starting the tests
-  webServer: {
-    command: 'pnpm dev',
-    url: 'http://localhost:4321/software-factory',
-    reuseExistingServer: true, // Always reuse if server is running
-    timeout: 180 * 1000, // 3 minutes for slow builds
+  // Run your local dev server before starting the tests (only in dev)
+  webServer: process.env.CI ? undefined : {
+    command: 'npm run dev',
+    url: 'http://localhost:4321',
+    reuseExistingServer: true,
+    timeout: 180 * 1000,
     stdout: 'pipe',
     stderr: 'pipe',
   },
