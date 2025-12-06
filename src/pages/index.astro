@@ -46,18 +46,38 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
+    <!-- BYOC Notice -->
+    <section class="container mx-auto px-4 py-8 max-w-4xl">
+      <div class="p-6 bg-dark-surface rounded-lg border-2 border-neon-cyan">
+        <div class="flex items-start gap-4">
+          <div class="text-4xl">🤖</div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold mb-2 text-neon-cyan">Bring Your Own Copilot (BYOC)</h3>
+            <p class="text-gray-400 mb-4">
+              Software Factory requires <strong>GitHub Copilot Pro</strong> ($10/mo) or higher. We orchestrate your AI agents — you provide the intelligence.
+            </p>
+            <a href="https://github.com/features/copilot/plans" target="_blank" class="inline-block px-6 py-2 bg-neon-cyan text-dark-bg font-bold rounded hover:bg-neon-cyan/80 transition">
+              Get Copilot →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Pricing -->
     <section id="pricing" class="container mx-auto px-4 py-16">
-      <h2 class="text-3xl font-bold text-center mb-12 text-neon-yellow">Pricing</h2>
+      <h2 class="text-3xl font-bold text-center mb-4 text-neon-yellow">Pricing</h2>
+      <p class="text-center text-gray-400 mb-12">Orchestration plans for your AI coding agents</p>
+      
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <!-- Free Tier -->
         <div class="p-6 bg-dark-surface rounded-lg border border-gray-800">
           <h3 class="text-2xl font-bold mb-2">Free</h3>
-          <p class="text-4xl font-bold mb-4">$0<span class="text-lg text-gray-500">/mo</span></p>
-          <p class="text-gray-500 text-sm mb-4">Ad-supported</p>
+          <p class="text-4xl font-bold mb-2">$9<span class="text-lg text-gray-500">/mo</span></p>
+          <p class="text-gray-500 text-sm mb-4">50 orchestrations/mo</p>
           <ul class="space-y-2 mb-6 text-gray-400">
             <li>✅ 1 repository</li>
-            <li>✅ Basic AI agents</li>
+            <li>✅ Basic agent dispatch</li>
             <li>✅ Community support</li>
             <li>⚠️ Contains ads</li>
           </ul>
@@ -65,55 +85,62 @@ import Layout from '../layouts/Layout.astro';
             Start Free
           </a>
         </div>
+        
         <!-- Starter -->
         <div class="p-6 bg-dark-surface rounded-lg border-2 border-neon-cyan relative">
           <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-neon-cyan text-dark-bg text-sm font-bold rounded">Popular</span>
           <h3 class="text-2xl font-bold mb-2">Starter</h3>
-          <p class="text-4xl font-bold mb-4">$5<span class="text-lg text-gray-500">/mo</span></p>
-          <p class="text-gray-500 text-sm mb-4">No ads</p>
+          <p class="text-4xl font-bold mb-2">$7<span class="text-lg text-gray-500">/mo</span></p>
+          <p class="text-gray-500 text-sm mb-4">200 orchestrations/mo</p>
           <ul class="space-y-2 mb-6 text-gray-400">
-            <li>✅ 5 repositories</li>
+            <li>✅ 3 repositories</li>
             <li>✅ All AI agents</li>
             <li>✅ Priority support</li>
             <li>✅ No ads</li>
           </ul>
-          <a href="#" class="block w-full py-3 text-center bg-neon-cyan text-dark-bg font-bold rounded-lg hover:bg-neon-cyan/80 transition">
+          <a href="/software-factory-site/pricing" class="block w-full py-3 text-center bg-neon-cyan text-dark-bg font-bold rounded-lg hover:bg-neon-cyan/80 transition">
             Subscribe
           </a>
         </div>
+        
         <!-- Pro -->
         <div class="p-6 bg-dark-surface rounded-lg border border-gray-800">
           <h3 class="text-2xl font-bold mb-2">Pro</h3>
-          <p class="text-4xl font-bold mb-4">$15<span class="text-lg text-gray-500">/mo</span></p>
-          <p class="text-gray-500 text-sm mb-4">For power users</p>
+          <p class="text-4xl font-bold mb-2">$15<span class="text-lg text-gray-500">/mo</span></p>
+          <p class="text-gray-500 text-sm mb-4">1,000 orchestrations/mo</p>
           <ul class="space-y-2 mb-6 text-gray-400">
-            <li>✅ Unlimited repos</li>
+            <li>✅ 10 repositories</li>
             <li>✅ Custom agents</li>
             <li>✅ API access</li>
             <li>✅ Dedicated support</li>
           </ul>
-          <a href="#" class="block w-full py-3 text-center border border-neon-magenta text-neon-magenta rounded-lg hover:bg-neon-magenta/10 transition">
+          <a href="/software-factory-site/pricing" class="block w-full py-3 text-center border border-neon-magenta text-neon-magenta rounded-lg hover:bg-neon-magenta/10 transition">
             Subscribe
           </a>
         </div>
       </div>
+      
+      <!-- Team Plan -->
+      <p class="text-center text-gray-400 mt-8">
+        Need more? <a href="/software-factory-site/pricing" class="text-neon-yellow hover:underline">Team plan at $39/mo</a> with 5,000 orchestrations
+      </p>
     </section>
 
-    <!-- Requires Git-Core Protocol -->
-    <section class="container mx-auto px-4 py-16 text-center">
-      <div class="p-8 bg-dark-surface rounded-lg border border-neon-yellow max-w-3xl mx-auto">
-        <h3 class="text-2xl font-bold mb-4 text-neon-yellow">⚠️ Requires Git-Core Protocol</h3>
+    <!-- Git-Core Protocol Notice -->
+    <section class="container mx-auto px-4 py-8 max-w-4xl">
+      <div class="p-6 bg-dark-surface rounded-lg border border-gray-800">
+        <h3 class="text-xl font-bold mb-2 text-neon-yellow">⚠️ Requires Git-Core Protocol</h3>
         <p class="text-gray-400 mb-4">
           Software Factory follows the Git-Core Protocol methodology. Your repository must include the required configuration.
         </p>
-        <a href="https://github.com/git-core-protocol/specification" class="text-neon-cyan hover:underline" target="_blank">
+        <a href="https://github.com/git-core-protocol/specification" target="_blank" class="text-neon-cyan hover:underline">
           Learn more about Git-Core Protocol →
         </a>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800 py-8">
+    <footer class="border-t border-gray-800 py-8 mt-16">
       <div class="container mx-auto px-4 text-center text-gray-500">
         <p>© 2025 Software Factory. Built with ❤️ and AI.</p>
         <div class="flex justify-center gap-6 mt-4">
@@ -125,3 +152,4 @@ import Layout from '../layouts/Layout.astro';
     </footer>
   </main>
 </Layout>
+
