@@ -46,20 +46,25 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- BYOC Notice -->
-    <section class="container mx-auto px-4 py-8 max-w-4xl">
-      <div class="p-6 bg-dark-surface rounded-lg border-2 border-neon-cyan">
-        <div class="flex items-start gap-4">
+    <!-- BYOC Banner -->
+    <section class="container mx-auto px-4 py-8">
+      <div class="max-w-4xl mx-auto p-6 bg-gradient-to-r from-purple-900/50 to-blue-900/50 rounded-lg border border-purple-500">
+        <div class="flex flex-col md:flex-row items-center gap-4">
           <div class="text-4xl">🤖</div>
-          <div class="flex-1">
-            <h3 class="text-xl font-bold mb-2 text-neon-cyan">Bring Your Own Copilot (BYOC)</h3>
-            <p class="text-gray-400 mb-4">
-              Software Factory requires <strong>GitHub Copilot Pro</strong> ($10/mo) or higher. We orchestrate your AI agents — you provide the intelligence.
+          <div class="flex-grow text-center md:text-left">
+            <h3 class="text-xl font-bold text-white mb-1">Bring Your Own Copilot (BYOC)</h3>
+            <p class="text-gray-300 text-sm">
+              Software Factory requires <strong class="text-neon-cyan">GitHub Copilot Pro</strong> ($10/mo) or higher.
+              We orchestrate your AI agents — you provide the intelligence.
             </p>
-            <a href="https://github.com/features/copilot/plans" target="_blank" class="inline-block px-6 py-2 bg-neon-cyan text-dark-bg font-bold rounded hover:bg-neon-cyan/80 transition">
-              Get Copilot →
-            </a>
           </div>
+          <a 
+            href="https://github.com/features/copilot/plans" 
+            target="_blank"
+            class="px-6 py-2 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition whitespace-nowrap"
+          >
+            Get Copilot →
+          </a>
         </div>
       </div>
     </section>
@@ -67,13 +72,12 @@ import Layout from '../layouts/Layout.astro';
     <!-- Pricing -->
     <section id="pricing" class="container mx-auto px-4 py-16">
       <h2 class="text-3xl font-bold text-center mb-4 text-neon-yellow">Pricing</h2>
-      <p class="text-center text-gray-400 mb-12">Orchestration plans for your AI coding agents</p>
-      
+      <p class="text-gray-400 text-center mb-12">Orchestration plans for your AI coding agents</p>
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <!-- Free Tier -->
         <div class="p-6 bg-dark-surface rounded-lg border border-gray-800">
           <h3 class="text-2xl font-bold mb-2">Free</h3>
-          <p class="text-4xl font-bold mb-2">$9<span class="text-lg text-gray-500">/mo</span></p>
+          <p class="text-4xl font-bold mb-4">$0<span class="text-lg text-gray-500">/mo</span></p>
           <p class="text-gray-500 text-sm mb-4">50 orchestrations/mo</p>
           <ul class="space-y-2 mb-6 text-gray-400">
             <li>✅ 1 repository</li>
@@ -90,7 +94,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="p-6 bg-dark-surface rounded-lg border-2 border-neon-cyan relative">
           <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-neon-cyan text-dark-bg text-sm font-bold rounded">Popular</span>
           <h3 class="text-2xl font-bold mb-2">Starter</h3>
-          <p class="text-4xl font-bold mb-2">$7<span class="text-lg text-gray-500">/mo</span></p>
+          <p class="text-4xl font-bold mb-4">$7<span class="text-lg text-gray-500">/mo</span></p>
           <p class="text-gray-500 text-sm mb-4">200 orchestrations/mo</p>
           <ul class="space-y-2 mb-6 text-gray-400">
             <li>✅ 3 repositories</li>
@@ -104,9 +108,9 @@ import Layout from '../layouts/Layout.astro';
         </div>
         
         <!-- Pro -->
-        <div class="p-6 bg-dark-surface rounded-lg border border-gray-800">
+        <div class="p-6 bg-dark-surface rounded-lg border border-neon-magenta">
           <h3 class="text-2xl font-bold mb-2">Pro</h3>
-          <p class="text-4xl font-bold mb-2">$15<span class="text-lg text-gray-500">/mo</span></p>
+          <p class="text-4xl font-bold mb-4">$15<span class="text-lg text-gray-500">/mo</span></p>
           <p class="text-gray-500 text-sm mb-4">1,000 orchestrations/mo</p>
           <ul class="space-y-2 mb-6 text-gray-400">
             <li>✅ 10 repositories</li>
@@ -119,9 +123,7 @@ import Layout from '../layouts/Layout.astro';
           </a>
         </div>
       </div>
-      
-      <!-- Team Plan -->
-      <p class="text-center text-gray-400 mt-8">
+      <p class="text-center mt-8 text-gray-500">
         Need more? <a href="/software-factory-site/pricing" class="text-neon-yellow hover:underline">Team plan at $39/mo</a> with 5,000 orchestrations
       </p>
     </section>
