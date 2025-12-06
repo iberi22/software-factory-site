@@ -33,6 +33,8 @@ export default defineConfig({
   // Shared settings for all the projects below
   use: {
     // Base URL to use in actions like `await page.goto('/')`
+    // NOTE: In development, Astro dev server runs at root /
+    // In production (CI), it's deployed to GitHub Pages with subfolder
     baseURL: process.env.CI 
       ? 'https://iberi22.github.io/software-factory-site'
       : 'http://localhost:4321',
@@ -49,23 +51,21 @@ export default defineConfig({
 
   // Configure projects for major browsers
   projects: [
-    // Desktop Chrome
+    // Desktop Chrome (default and only project for faster execution)
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        ...devices['Desktop Chrome'],
+        // Headless mode by default (set to false for debugging)
+        headless: true,
+      },
     },
 
-    // Desktop Firefox (commented out for faster CI, enable as needed)
+    // Mobile Chrome (disabled by default, enable when needed)
     // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
+    //   name: 'Mobile Chrome',
+    //   use: { ...devices['Pixel 5'] },
     // },
-
-    // Mobile Chrome
-    {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-    },
   ],
 
   // Run your local dev server before starting the tests (only in dev)
