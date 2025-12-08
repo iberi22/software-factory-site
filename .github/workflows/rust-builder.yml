@@ -1,0 +1,45 @@
+name: 🦀 Rust Builder (Private Source)
+
+on:
+  # Triggered by the Private Repo when a build is needed
+  repository_dispatch:
+    types: [build-rust-binary]
+  workflow_dispatch:
+
+jobs:
+  build-private-rust:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Private Source
+        uses: actions/checkout@v4
+        with:
+          repository: iberi22/software-factory
+          token: ${{ secrets.PRIVATE_REPO_PAT }}
+          path: private-source
+          ref: main
+
+      - name: 🦀 Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: 🔨 Build Binary
+        working-directory: private-source/rust
+        run: |
+          echo "Building private Rust binary..."
+          # cargo build --release
+          # Mock build for now
+          mkdir -p target/release
+          echo "binary-data" > target/release/my-tool
+
+      - name: 📤 Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rust-binary
+          path: private-source/rust/target/release/
+          retention-days: 1
+
+      # Optional: Release back to Private Repo
+      # - name: Create Release
+      #   ...
