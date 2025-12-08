@@ -1,0 +1,27 @@
+name: 📊 Telemetry Aggregator (Public Bridge)
+
+on:
+  schedule:
+    # Runs every Monday at 10:00 UTC
+    - cron: '0 10 * * 1'
+  workflow_dispatch:
+
+jobs:
+  trigger-telemetry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📊 Trigger Telemetry Aggregation
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_PAT }}
+          script: |
+            console.log('🚀 Triggering Telemetry Aggregation in private repo...');
+            
+            await github.rest.actions.createWorkflowDispatch({
+              owner: 'iberi22',
+              repo: 'software-factory',
+              workflow_id: 'aggregate-telemetry.yml',
+              ref: 'main'
+            });
+            
+            console.log('✅ Telemetry aggregation triggered');
