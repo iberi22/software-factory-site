@@ -22,7 +22,7 @@ test.describe('Landing Page', () => {
           errors.push(msg.text());
         }
       });
-      
+
       await page.waitForLoadState('networkidle');
       expect(errors.length).toBe(0);
     });
@@ -148,7 +148,7 @@ test.describe('Landing Page', () => {
       const links = page.locator('a[href]');
       const count = await links.count();
       expect(count).toBeGreaterThan(0);
-      
+
       // Check first link is visible and enabled
       await expect(links.first()).toBeVisible();
       await expect(links.first()).toBeEnabled();
@@ -158,30 +158,30 @@ test.describe('Landing Page', () => {
   test.describe('Responsive Design', () => {
     test('should work on mobile viewport', async ({ page }) => {
       await page.setViewportSize({ width: 375, height: 667 }); // iPhone SE
-      
+
       const h1 = page.locator('h1');
       await expect(h1).toBeVisible();
-      
+
       const pricingSection = page.locator('text=/pricing/i');
       await expect(pricingSection).toBeVisible();
     });
 
     test('should work on tablet viewport', async ({ page }) => {
       await page.setViewportSize({ width: 768, height: 1024 }); // iPad
-      
+
       const h1 = page.locator('h1');
       await expect(h1).toBeVisible();
-      
+
       const banner = page.locator('text=/bring your own cloud/i');
       await expect(banner).toBeVisible();
     });
 
     test('should work on desktop viewport', async ({ page }) => {
       await page.setViewportSize({ width: 1920, height: 1080 }); // Full HD
-      
+
       const h1 = page.locator('h1');
       await expect(h1).toBeVisible();
-      
+
       const allPricing = page.locator('text=/\\$0|\\$7|\\$15/i');
       const count = await allPricing.count();
       expect(count).toBeGreaterThanOrEqual(3); // All three tiers visible
@@ -194,7 +194,7 @@ test.describe('Landing Page', () => {
       await page.goto('/');
       await page.locator('h1').waitFor({ state: 'visible' });
       const loadTime = Date.now() - startTime;
-      
+
       expect(loadTime).toBeLessThan(3000);
     });
 
@@ -202,7 +202,7 @@ test.describe('Landing Page', () => {
       // Check for basic accessibility
       const h1Count = await page.locator('h1').count();
       expect(h1Count).toBeGreaterThan(0);
-      
+
       const imgWithoutAlt = await page.locator('img:not([alt])').count();
       expect(imgWithoutAlt).toBe(0);
     });

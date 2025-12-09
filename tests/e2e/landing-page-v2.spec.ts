@@ -82,10 +82,10 @@ test.describe('Landing Page', () => {
     test('should display Free tier', async ({ page }) => {
       const freeTier = page.getByRole('heading', { name: 'Free', exact: true });
       await expect(freeTier).toBeVisible();
-      
+
       const price = page.locator('text=/\\$0\\s*\\/mo/');
       await expect(price).toBeVisible();
-      
+
       const limit = page.getByText('50 orchestrations/mo');
       await expect(limit).toBeVisible();
     });
@@ -93,10 +93,10 @@ test.describe('Landing Page', () => {
     test('should display Starter tier', async ({ page }) => {
       const starterTier = page.getByRole('heading', { name: 'Starter', exact: true });
       await expect(starterTier).toBeVisible();
-      
+
       const price = page.locator('text=/\\$7\\s*\\/mo/');
       await expect(price).toBeVisible();
-      
+
       const limit = page.getByText('200 orchestrations/mo');
       await expect(limit).toBeVisible();
     });
@@ -104,10 +104,10 @@ test.describe('Landing Page', () => {
     test('should display Pro tier', async ({ page }) => {
       const proTier = page.getByRole('heading', { name: 'Pro', exact: true });
       await expect(proTier).toBeVisible();
-      
+
       const price = page.locator('text=/\\$15\\s*\\/mo/');
       await expect(price).toBeVisible();
-      
+
       const limit = page.getByText('1,000 orchestrations/mo');
       await expect(limit).toBeVisible();
     });
@@ -153,7 +153,7 @@ test.describe('Landing Page', () => {
       const startTime = Date.now();
       await page.goto('/', { waitUntil: 'networkidle' });
       const loadTime = Date.now() - startTime;
-      
+
       expect(loadTime).toBeLessThan(3000);
     });
   });

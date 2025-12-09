@@ -35,7 +35,7 @@ export default defineConfig({
     // Base URL to use in actions like `await page.goto('/')`
     // NOTE: In development, Astro dev server runs at root /
     // In production (CI), it's deployed to GitHub Pages with subfolder
-    baseURL: process.env.CI 
+    baseURL: process.env.CI
       ? 'https://iberi22.github.io/software-factory-site'
       : 'http://localhost:4321',
 
@@ -54,7 +54,7 @@ export default defineConfig({
     // Desktop Chrome (default and only project for faster execution)
     {
       name: 'chromium',
-      use: { 
+      use: {
         ...devices['Desktop Chrome'],
         // Headless mode by default (set to false for debugging)
         headless: true,
