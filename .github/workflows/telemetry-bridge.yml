@@ -16,12 +16,12 @@ jobs:
           github-token: ${{ secrets.PRIVATE_REPO_PAT }}
           script: |
             console.log('🚀 Triggering Telemetry Aggregation in private repo...');
-            
+
             await github.rest.actions.createWorkflowDispatch({
               owner: 'iberi22',
               repo: 'software-factory',
               workflow_id: 'aggregate-telemetry.yml',
               ref: 'main'
             });
-            
+
             console.log('✅ Telemetry aggregation triggered');

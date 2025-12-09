@@ -21,11 +21,11 @@ jobs:
           github-token: ${{ secrets.PRIVATE_REPO_PAT }}
           script: |
             console.log('🚀 Triggering Evolution Cycle in private repo...');
-            
+
             const owner = 'iberi22';
             const repo = 'software-factory';
             const week_offset = '${{ github.event.inputs.week_offset || '1' }}';
-            
+
             await github.rest.actions.createWorkflowDispatch({
               owner,
               repo,
@@ -36,5 +36,5 @@ jobs:
                 create_issue: 'true'
               }
             });
-            
+
             console.log('✅ Evolution Cycle triggered successfully');

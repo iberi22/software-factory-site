@@ -24,9 +24,9 @@ jobs:
           script: |
             const owner = 'iberi22';
             const repo = 'software-factory';
-            
+
             console.log(`🔍 Checking ${owner}/${repo} for mergeable PRs...`);
-            
+
             // 1. List Open PRs
             const prs = await github.rest.pulls.list({
               owner,
@@ -34,9 +34,9 @@ jobs:
               state: 'open',
               per_page: 100
             });
-            
+
             console.log(`Found ${prs.data.length} open PRs`);
-            
+
             for (const pr of prs.data) {
               // 2. Check Reviews
               const reviews = await github.rest.pulls.listReviews({
@@ -44,25 +44,25 @@ jobs:
                 repo,
                 pull_number: pr.number
               });
-              
+
               const approved = reviews.data.some(r => r.state === 'APPROVED');
-              
+
               // 3. Check Status Checks
               const checks = await github.rest.checks.listForRef({
                 owner,
                 repo,
                 ref: pr.head.sha
               });
-              
+
               const allChecksPassed = checks.data.check_runs.every(c => c.conclusion === 'success' || c.conclusion === 'skipped');
-              
+
               // 4. Check Labels (Blockers)
               const labels = pr.labels.map(l => l.name);
               const blocked = labels.includes('high-stakes') || labels.includes('needs-human');
-              
+
               if (approved && allChecksPassed && !blocked) {
                 console.log(`✅ PR #${pr.number} is eligible for auto-merge. Merging...`);
-                
+
                 try {
                   await github.rest.pulls.merge({
                     owner,
