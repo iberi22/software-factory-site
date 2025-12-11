@@ -1,0 +1,22 @@
+name = "factory-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Bindings
+[vars]
+# Environment variables
+ALLOWED_ORIGINS = "https://iberi22.github.io,http://localhost:4321"
+
+# KV Namespaces (created via `wrangler kv:namespace create <name>`)
+# kv_namespaces = [
+#   { binding = "RATE_LIMIT", id = "xxx" }
+# ]
+
+# Rate limiting
+# [triggers]
+# crons = ["* * * * *"] # Every minute cleanup if using custom logic
+
+# Observability
+[observability]
+enabled = true
+head_sampling_rate = 1
